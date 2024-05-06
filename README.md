@@ -2,7 +2,7 @@
 ## Date: 
 
 ## AIM
-To develop a Django application to store and retrieve data from a Football Players database using Object Relational Mapping(ORM).
+To develop a Django application to store and retrieve data from a Book database using Object Relational Mapping(ORM).
 
 ## Entity Relationship Diagram
 
@@ -20,15 +20,33 @@ Create a new app in Django project
 Enter the code for admin.py and models.py
 
 ### STEP 4:
-Execute Django admin and create 10 Football players
+Execute Django admin and create details for 10 books
 
 ## PROGRAM
-![exp 2 pro](https://github.com/dhinesh00406/ORM/assets/147149471/3d8bea69-7177-49a4-adc1-79c4810903bd)
+```C
+admin.py
+from django.contrib import admin
+from .models import railway,railwayAdmin
+admin.site.register(railway,railwayAdmin)
 
-## OUTPUT:
+models.py
+from django.db import models
+from django.contrib import admin
+class railway (models.Model):
+    train_code=models.CharField(max_length=20,help_text="railway train_code")
+    train_name=models.CharField(max_length=100)
+    start_time=models.IntegerField()
+    End_time=models.IntegerField()
+    start_station_code=models.IntegerField()
+    end_station_code=models.IntegerField()
+    
+ 
+class railwayAdmin(admin.ModelAdmin):
+ list_display=('train_code','train_name','start_time','End_time','start_station_code','end_station_code',)
+```
 
-![P I C 1](https://github.com/dhinesh00406/ORM/assets/147149471/47e9638e-014b-4e07-8af4-067ad7b12dca)
-
+## OUTPUT
+![fundamentals pic3](https://github.com/dhinesh00406/ORM/assets/147149471/b0a9e8bd-f49c-4c74-b220-950413954a49)
 
 
 ## RESULT
